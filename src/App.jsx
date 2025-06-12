@@ -1,13 +1,13 @@
 import "./styles/theme.css";
 import "./styles/global.css";
-import { MyGrid } from "./components/MyGrid";
+import { MyGsa } from "./components/MyGsa.jsx";
 
 export default function App() {
 
   return (
     //React Fragment
     <>
-      <MyGrid />
+      <MyGsa />
     </>
   );
 }

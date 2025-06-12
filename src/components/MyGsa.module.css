@@ -1,0 +1,97 @@
+.grid {
+  padding: 3rem;
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-template-rows: repeat(auto-fit, min-content);
+}
+
+.card {
+  height: 20rem;
+  background-color: var(--primary-dark);
+  color: var(--primary-contrast-light);
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5);
+  font-size: 3rem;
+  /* O flex ai ó, dentro dos cards*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  display: grid;
+
+  grid-template-areas:
+    "header1 header1 header1"
+    "left header2 right"
+    "left main right"
+    "left footer right"
+    "footer2 footer2 right";
+
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 10rem 5rem auto 10rem 10rem;
+
+}
+
+@media (max-width: 1200px) {
+  .container {
+    grid-template-areas:
+      "header1 header1 header1"
+      "left header2 header2"
+      "left main main"
+      "left footer footer"
+      "footer2 footer2 footer2";
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      grid-template-areas:
+        "header2"
+        "main"
+        "footer";
+      grid-template-columns: 1fr;
+      grid-template-rows: 5rem auto 10rem;
+    }
+  }
+
+}
+
+
+
+.header1 {
+  grid-area: header1;
+  background-color: rgb(0, 30, 128);
+}
+
+.header2 {
+  grid-area: header2;
+  background-color: deepskyblue;
+}
+
+.asideLeft {
+  grid-area: left;
+  background-color: deeppink;
+}
+
+.asideRight {
+  grid-area: right;
+  background-color: deeppink;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: deepskyblue;
+}
+
+
+.footer2 {
+  grid-area: footer2;
+  background-color: rgb(0, 30, 128);
+
+}
+
+.main {
+  grid-area: main;
+}

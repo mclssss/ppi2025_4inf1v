@@ -1,11 +1,12 @@
-import styles from "./MyGrid.module.css";
+import styles from "./MyGsa.module.css";
 
-export function MyGrid() {
+export function MyGsa() {
   return (
     <div className={styles.container}>
-      <header className={styles.header1} />
-      <header className={styles.header2} />
-      <aside className={styles.aside} />
+      <header className={styles.header1}></header>
+      <header className={styles.header2}></header>
+      <aside className={styles.asideLeft}></aside>
+      <aside className={styles.asideRight}></aside>
       <div className={styles.main}>
         <div className={styles.grid}>
           <div className={styles.card}>
@@ -30,7 +31,8 @@ export function MyGrid() {
           </div>
         </div>
       </div>
-      <footer className={styles.footer} />
+      <footer className={styles.footer}></footer>
+      <footer className={styles.footer2}></footer>
     </div>
   );
 }
