@@ -1,13 +1,18 @@
 import "./styles/theme.css";
 import "./styles/global.css";
-import { MyGsa } from "./components/MyGsa.jsx";
+import Header from './components/Header';
+import Main from './components/Main';
+import Footer from './components/Footer';
 
-export default function App() {
-
+function App() {
   return (
-    //React Fragment
     <>
-      <MyGsa />
+      <Header />
+      <Main />
+      <div className='spacer'></div>
+      <Footer />
     </>
   );
 }
+
+export default App;

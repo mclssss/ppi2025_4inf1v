@@ -1,0 +1,26 @@
+.footer {
+  background-color: #f1f5f9;
+  color: #000;
+  padding: 20px;
+  text-align: center;
+  margin-top: auto;
+}
+
+.prof {
+  font-family: 'Cursive';
+  color: #a225eb;
+  margin: 10px 0;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+.icon {
+  width: 30px;
+  height: 30px;
+  fill: #3b82f6;
+  transition: fill 0.3s;
+}
