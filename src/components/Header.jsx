@@ -1,7 +1,7 @@
 import styles from './Header.module.css';
 import { Clock } from 'lucide-react';
 
-export default function Header() {
+export function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.logoArea}>
