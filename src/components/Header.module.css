@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    padding: 3rem;
+}
+.container h1 {
+    font-size: 10rem;
+    font-weight: bolder;
+}
+
+.containerImg img{
+    height: auto;
+    width: 100%;
+    max-width: 20rem;
+}
