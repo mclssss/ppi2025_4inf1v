@@ -26,3 +26,8 @@
     background-color: var(--primary-light);
     transform: scale(1.05);
 }
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+}
