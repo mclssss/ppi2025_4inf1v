@@ -1,6 +1,6 @@
 import styles from "./Product.module.css";
 
-export function Product({ product }) {
+export function Product({ product, addToCart }) {
   return (
     <div className={styles.productCard}>
       <img
@@ -9,9 +9,14 @@ export function Product({ product }) {
         className={styles.productImage}
       />
       <h2 className={styles.productTitle}>{product.title}</h2>
-      <p className={styles.productPrice}>Price: ${product.price}</p>
       <p className={styles.productDescription}>{product.description}</p>
-      <button className={styles.addToCartButton}>Adicionar ao carrinho</button>
+      <p className={styles.productPrice}>R$ {product.price.toFixed(2)}</p>
+      <button
+        onClick={() => addToCart(product)}
+        className={styles.productButton}
+      >
+        ADICIONAR
+      </button>
     </div>
   );
 }
