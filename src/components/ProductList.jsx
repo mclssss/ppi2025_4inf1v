@@ -1,37 +1,55 @@
-import { useEffect, useState } from "react";
 import styles from "./ProductList.module.css";
 import { CircularProgress } from "@mui/material";
 import { Product } from "./Product";
+import { useState, useContext, useEffect, useRef } from "react";
+import { CartContext } from "../service/CartContext";
 
-export function ProductList({ addToCart }) {
-  const category = "smartphones";
-  const limit = 10;
-  const apiUrl = `https://dummyjson.com/products/category/${category}?limit=${limit}&select=id,thumbnail,title,price,description`;
+export function ProductList() {
+  
+  const { products, loading, error } = useContext(CartContext);
 
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+
+  const searchInput = useRef(null);
 
   useEffect(() => {
-    async function fetchProducts() {
-      try {
-        const response = await fetch(apiUrl);
-        const data = await response.json();
-        setProducts(data.products.map(p => ({ ...p, quantity: 1 })));
-      } catch (error) {
-        setError(error);
-      } finally {
-        setLoading(false);
-      }
+    if(products) {
+      setFilteredProducts(products);
     }
-    fetchProducts();
-  }, []);
+  }, [products]);
+
+  function handleSearch() {
+    const query = searchInput.current.value.toLowerCase();
+    setFilteredProducts(
+      products.filter((product) =>
+        product.title.toLowerCase().includes(query) || 
+        product.description.toLowerCase().includes(query)
+      )
+    );
+  }
+
+  function handleClear() {
+    searchInput.current.value = "";
+    setFilteredProducts(products);
+  }
 
   return (
     <div className={styles.container}>
+      <div className={styles.searchContainer}>
+        <input
+          ref={searchInput}
+          type="text"
+          placeholder="Search products..."
+          className={styles.searchInput}
+          onChange={handleSearch}
+        />
+        <button className={styles.searchButton} onClick={handleClear}>
+          CLEAR
+        </button>
+      </div>
       <div className={styles.productList}>
-        {products.map((product) => (
-          <Product key={product.id} product={product} addToCart={addToCart} />
+        {filteredProducts.map((product) => (
+          <Product key={product.id} product={product} />
         ))}
       </div>
       {loading && (
@@ -39,12 +57,12 @@ export function ProductList({ addToCart }) {
           <CircularProgress
             thickness={5}
             style={{ margin: "2rem auto", display: "block" }}
-            sx={{ color: "#234" }}
+            sx={{ color: "#001111" }}
           />
-          <p>Carregando produtos...</p>
+          <p>Loading products...</p>
         </div>
       )}
-      {error && <p>Erro ao carregar produtos: {error.message} ❌</p>}
+      {error && <p>Error loading products: {error.message} ❌</p>}
     </div>
   );
 }
