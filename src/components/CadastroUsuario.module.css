@@ -1,0 +1,59 @@
+.cadastroContainer {
+  max-width: 40rem;
+  margin: 4rem auto;
+  padding: 2.5rem;
+  background: var(--gray-100);
+  border-radius: 1.2rem;
+  box-shadow: 0 0.4rem 1.5rem rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cadastroContainer:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 0.6rem 2rem rgba(0, 0, 0, 0.12);
+}
+
+.cadastroContainer h2 {
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 2.4rem;
+  color: var(--primary-dark);
+}
+
+.cadastroContainer form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.cadastroContainer input {
+  padding: 1rem;
+  border: 0.2rem solid var(--primary-light);
+  border-radius: 0.8rem;
+  font-size: 1.6rem;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cadastroContainer input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.08);
+}
+
+.cadastroContainer button {
+  padding: 1rem;
+  background-color: var(--primary);
+  color: var(--gray-900);
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+  transition: background-color 0.25s ease, transform 0.15s ease;
+}
+
+.cadastroContainer button:hover {
+  background-color: var(--primary-dark);
+  transform: scale(1.05);
+}

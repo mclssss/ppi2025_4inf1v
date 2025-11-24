@@ -2,11 +2,14 @@ import styles from "./ProductList.module.css";
 import { CircularProgress } from "@mui/material";
 import { Product } from "./Product";
 import { useState, useContext, useEffect, useRef } from "react";
-import { CartContext } from "../service/CartContext";
+import { CartContext } from "../context/CartContext";
+import { SessionContext } from "../context/SessionContext";
 
 export function ProductList() {
   
   const { products, loading, error } = useContext(CartContext);
+
+  const { Session } = useContext(SessionContext)
 
   const [filteredProducts, setFilteredProducts] = useState([]);
 
@@ -62,7 +65,7 @@ export function ProductList() {
           <p>Loading products...</p>
         </div>
       )}
-      {error && <p>Error loading products: {error.message} ❌</p>}
+      {error && <p>❌ {error}</p>}
     </div>
   );
 }

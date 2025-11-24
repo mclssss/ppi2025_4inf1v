@@ -1,3 +1,50 @@
+.searchWrapper {
+  width: 100%;
+  max-width: 40rem;
+  margin: 1rem auto 2rem auto;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  border: 0.15rem solid var(--primary-light, #ccc);
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.searchIcon {
+  margin-right: 1.2rem;
+  color: var(--primary, #ff4fa3);
+  pointer-events: none;
+}
+
+.searchBar {
+  flex: 1;
+  padding: 1rem 1.2rem 1rem 1.2rem;
+  border: none;
+  border-radius: 1.2rem;
+  font-size: 1.2rem;
+  outline: none;
+  background: transparent;
+  box-shadow: none;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.searchBar:focus {
+  box-shadow: 0 0 0.5rem var(--primary, #ff4fa3);
+}
+
+.clearBtn {
+  margin-left: 0.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.2rem 0.6rem;
+  color: #888;
+  transition: color 0.2s;
+}
+.clearBtn:hover {
+  color: var(--primary, #ff4fa3);
+}
 .container {
   display: flex;
   flex-direction: column;
@@ -13,40 +60,24 @@
   gap: 3rem;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   grid-template-rows: repeat(auto-fit, min-content);
-}
-
-.searchContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
   width: 100%;
 }
 
-.searchInput {
-  display: flex;
-  gap: 1rem;
+.searchBar {
   width: 100%;
-  max-width: 60rem;
-  justify-content: center;
-  padding: 1rem;
-  font-size: 2rem;
-  border: 0.25rem solid var(--primary);
+  max-width: 40rem;
+  padding: 1rem 1.2rem;
+  margin: 1rem auto;
+  display: block;
+  border: 0.2rem solid var(--primary-light, #ccc);
   border-radius: 1rem;
+  font-size: 1.2rem;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
+  outline: none;
 }
 
-.searchButton {
-  background-color: var(--primary);
-  color: var(--gray-900);
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 1rem;
-  cursor: pointer;
-  font-size: 2rem;
-  font-weight: bold;
-  border: 0.25rem solid var(--gray-900);
-}
-
-.searchButton:hover {
-  background-color: var(--primary-dark);
+.searchBar:focus {
+  border-color: var(--primary, #ff4fa3);
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.08);
+  transform: scale(1.01);
 }

@@ -1,0 +1,120 @@
+.gerenciarContainer {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.gerenciarContainer h2 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-dark, #333);
+}
+
+.gerenciarContainer form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.gerenciarContainer form input {
+  flex: 1 1 200px;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.8rem;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.gerenciarContainer form input:focus {
+  border-color: var(--primary, #ff4fa3);
+  outline: none;
+}
+
+.gerenciarContainer form button {
+  padding: 0.75rem 1.2rem;
+  background-color: var(--primary, #ff4fa3);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.gerenciarContainer form button:hover {
+  background-color: var(--primary-dark, #e03d8c);
+}
+
+.gerenciarContainer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.gerenciarContainer li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.8rem;
+}
+
+.gerenciarContainer img {
+  border-radius: 0.5rem;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+.gerenciarContainer button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.gerenciarContainer button:hover {
+  transform: scale(1.05);
+}
+
+.gerenciarContainer button:nth-child(1) {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.gerenciarContainer button:nth-child(1):hover {
+  background-color: #e0a800;
+}
+
+.gerenciarContainer button:nth-child(2) {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.gerenciarContainer button:nth-child(2):hover {
+  background-color: #c82333;
+}
+
+@media (max-width: 600px) {
+  .gerenciarContainer {
+    padding: 1.5rem;
+  }
+
+  .gerenciarContainer li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .gerenciarContainer img {
+    width: 100%;
+    max-width: 200px;
+  }
+}
